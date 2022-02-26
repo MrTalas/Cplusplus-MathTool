@@ -7,11 +7,11 @@
 #include <windows.h>
 int islemsec(){
 	char islem;
-	printf("\n[1]Yüzde hesabý");	
-	printf("\n[2]Hipotenus hesabý");
-	printf("\n[3]Trigonometri hesabý");
-	printf("\n[4]4 Ýþlem");	
-	printf("\n[5]Çýkýþ");	
+	printf("\n[1]Yuzde hesabi");	
+	printf("\n[2]Hipotenus hesabi");
+	printf("\n[3]Trigonometri hesabi");
+	printf("\n[4]4 Ä°slem");	
+	printf("\n[5]Cikis");	
 	printf("\n:");
 	islem=getch();
 	printf("%c",islem);
@@ -20,8 +20,8 @@ int islemsec(){
 
 int homepage(){
 	int hom;
-	printf("\nDevam Etmek için [1]");
-	printf("\nAna sayfaya gitmek için [2]");
+	printf("\nDevam Etmek icin [1]");
+	printf("\nAna sayfaya gitmek icin [2]");
 	printf("\n:");
 	hom = getch();
 	return hom;
@@ -34,7 +34,7 @@ int trigonometri(){
 	scanf("%d",&sec);
 	if(sec == 1){
 		int sinsec;
-		printf("\nSinus Hesaplamasý");
+		printf("\nSinus Hesaplamasi");
 		scanf("%d",sinsec);
 		printf("%d",asin(sinsec));
 		
@@ -68,25 +68,25 @@ int yuzde()
 	int sec;
 	float a=0;
 	float b=0;	
-	printf("\n[1]A sayýsýnýn %%B'si kaçtýr");
-	printf("\n[2]A sayýsý, %B kadar artýrýlýrsa kaç olur?");
+	printf("\n[1]A sayisinin %%B'si kactir");
+	printf("\n[2]A sayisi, %B kadar artirilirsa kac olur?");
 	printf("\n:");
 	sec = getch();
 	if(sec == '1'){
-		printf("\n[1]A sayýsýnýn %%B'si kaçtýr");
-		printf("\nA sayýsý : ");
+		printf("\n[1]A sayisinin %%B'si kactir");
+		printf("\nA sayisi : ");
 		scanf("%f",&a);
-		printf("\nB sayýsý : ");
+		printf("\nB sayisi : ");
 		scanf("%f",&b);	
-		printf("%.0f sayýsýnýn %%%.0f'i %.2f",a,b,(a*b)/100);	
+		printf("%.0f sayisinin %%%.0f'i %.2f",a,b,(a*b)/100);	
 	}
 	if(sec == '2'){
-		printf("\n[2]A sayýsý, %%B kadar artýrýlýrsa kaç olur?");
-		printf("\nA sayýsý : ");
+		printf("\n[2]A sayisi, %%B kadar artirilirsa kac olur?");
+		printf("\nA sayisi : ");
 		scanf("%f",&a);
-		printf("\nB sayýsý : ");
+		printf("\nB sayisi : ");
 		scanf("%f",&b);	
-		printf("%.0f sayýsý %%%.0f kadar artýlýrsa cevap %.2f olur.",a,b,((a*b)/100)+a);	
+		printf("%.0f sayisi %%%.0f kadar artirilirsa cevap %.2f olur.",a,b,((a*b)/100)+a);	
 	}	
 	return 0;
 }
@@ -97,40 +97,40 @@ int dortislem()
 	int b;
 	int sec;
 	printf("\n[1]Toplama");
-	printf("\n[2]Çýkarma");
-	printf("\n[3]Çarpma");
-	printf("\n[4]Bölme");
+	printf("\n[2]Cikarma");
+	printf("\n[3]Carpma");
+	printf("\n[4]Bolme");
 	printf("\n:");
 	sec = getch();
 	if(sec == '1'){
-		printf("TOPLAMA ÝÞLEMÝ");
-		printf("\nA sayýsý : ");
+		printf("TOPLAMA ISLEMI");
+		printf("\nA sayisi : ");
 		scanf("%d",&a);
-		printf("\nB sayýsý : ");
+		printf("\nB sayisi : ");
 		scanf("%d",&b);
 		printf("%d + %d = %d",a,b,a+b);		
 	}
 	if(sec == '2'){
-		printf("ÇIKARMA ÝÞLEMÝ");
-		printf("\nA sayýsý : ");
+		printf("CIKARMA ISLEMI");
+		printf("\nA sayisi : ");
 		scanf("%d",&a);
-		printf("\nB sayýsý : ");
+		printf("\nB sayisi : ");
 		scanf("%d",&b);
 		printf("%d - %d = %d",a,b,a-b);			
 	}	
 	if(sec == '3'){
-		printf("ÇARPMA ÝÞLEMÝ");
-		printf("\nA sayýsý : ");
+		printf("CARPMA ISLEMI");
+		printf("\nA sayisi : ");
 		scanf("%d",&a);
-		printf("\nB sayýsý : ");
+		printf("\nB sayisi : ");
 		scanf("%d",&b);
 		printf("%d x %d = %d",a,b,a*b);	
 	}	
 	if(sec == '4'){
-		printf("BÖLME ÝÞLEMÝ");
-		printf("\nA sayýsý : ");
+		printf("BOLME ISLEMI");
+		printf("\nA sayisi : ");
 		scanf("%d",&a);
-		printf("\nB sayýsý : ");
+		printf("\nB sayisi : ");
 		scanf("%d",&b);
 		printf("%d / %d = %d",a,b,a/b);	
 	}	
@@ -175,7 +175,7 @@ int main(){
 	if(islem == '5'){
 		printf("\nExit !");
 		for(int i=5;i>0;i--){
-	    printf("\nProgram %d saniye içinde kapanacak.",i);
+	    printf("\nProgram %d saniye icinde kapanacak.",i);
 		Sleep(1000);
 		}
 		exit(0);
