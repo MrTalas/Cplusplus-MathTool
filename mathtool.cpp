@@ -9,7 +9,7 @@ int islemsec(){
 	char islem;
 	printf("\n[1]Yuzde hesabi");	
 	printf("\n[2]Hipotenus hesabi");
-	printf("\n[3]Trigonometri hesabi");
+	printf("\n[3]Kare/Kup hesabi");
 	printf("\n[4]4 İslem");	
 	printf("\n[5]Cikis");	
 	printf("\n:");
@@ -27,18 +27,30 @@ int homepage(){
 	return hom;
 	
 }
-int trigonometri(){
+int kare_kup(){
 	int sec;
-	printf("\n[1]Sin");
-	printf("\n[2]Cos");
-	scanf("%d",&sec);
-	if(sec == 1){
-		int sinsec;
-		printf("\nSinus Hesaplamasi");
-		scanf("%d",sinsec);
-		printf("%d",asin(sinsec));
-		
+	printf("\n[1]Kare hesaplama");
+	printf("\n[2]Kup hesaplama");
+	printf("\n:");
+	sec = getch();
+	if(sec == '1'){
+		int ilkkare;
+		int sonuckare;
+		printf("\nKaresi alinacak sayi :");
+		scanf("%d",&ilkkare);
+		sonuckare = ilkkare;
+		sonuckare*=sonuckare;
+		printf("%d nin karesi %d dir",ilkkare,sonuckare);		
 	}
+	if(sec == '2'){
+		int ilkkup;
+		int sonuckup;
+		printf("\nKupu alinacak sayi :");
+		scanf("%d",&ilkkup);
+		sonuckup = ilkkup;
+		sonuckup = sonuckup*sonuckup*sonuckup;
+		printf("%d nin kupu %d dir",ilkkup,sonuckup);		
+	}	
 	
 	
 	return 0;
@@ -158,10 +170,10 @@ int main(){
 	
 	}
 	if(islem == '3'){
-		trigonometri:
-		trigonometri();
+		kare_kup:
+		kare_kup();
 		int hom=homepage();
-		if(hom == '1')goto trigonometri;
+		if(hom == '1')goto kare_kup;
 		if(hom == '2')goto setup;			
 	}
 	if(islem == '4'){
@@ -169,7 +181,7 @@ int main(){
 		dortislem();
 		int hom=homepage();
 		if(hom == '1')goto dort;
-		if(hom == '2')goto setup;homs=true;
+		if(hom == '2')goto setup;
 			
 	}	
 	if(islem == '5'){
