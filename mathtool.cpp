@@ -11,7 +11,8 @@ int islemsec(){
 	printf("\n[2]Hipotenus hesabi");
 	printf("\n[3]Kare/Kup hesabi");
 	printf("\n[4]4 İslem");	
-	printf("\n[5]Cikis");	
+	printf("\n[5]Karekok hesabı");		
+	printf("\n[6]Cikis");	
 	printf("\n:");
 	islem=getch();
 	printf("%c",islem);
@@ -55,6 +56,16 @@ int kare_kup(){
 	
 	return 0;
 		
+}
+
+int karekok(){
+	int ilkkok;
+	int kok;
+	printf("\nKarekoku alinacak sayi :");
+	scanf("%d",&ilkkok);
+	kok = ilkkok;
+	kok = sqrt(ilkkok);
+	printf("%d nin karekoku %d dir",ilkkok,kok);
 }
 int hipotenus()
 {
@@ -183,11 +194,20 @@ int main(){
 		if(hom == '1')goto dort;
 		if(hom == '2')goto setup;
 			
-	}	
+	}
 	if(islem == '5'){
+		karekok:
+		karekok();
+		int hom=homepage();
+		if(hom == '1')goto karekok;
+		if(hom == '2')goto setup;
+			
+	}		
+	if(islem == '6'){
+		int fastex;
 		printf("\nExit !");
 		for(int i=5;i>0;i--){
-	    printf("\nProgram %d saniye icinde kapanacak.",i);
+	    printf("\nProgram %d saniye icinde kapanacak.",i);	    
 		Sleep(1000);
 		}
 		exit(0);
