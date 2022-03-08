@@ -11,7 +11,7 @@ int islemsec(){
 	printf("\n[2]Hipotenus hesabi");
 	printf("\n[3]Kare/Kup hesabi");
 	printf("\n[4]4 İslem");	
-	printf("\n[5]Karekok hesabı");		
+	printf("\n[5]Karekok hesabi");		
 	printf("\n[6]Cikis");	
 	printf("\n:");
 	islem=getch();
