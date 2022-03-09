@@ -4,13 +4,18 @@ An advanced calculator with math tools inside.
 
 ## Contents
 
-- Four transactions (Addition,Subtraction,Multiplication,Division)
-
 - Percentage calculation
 
 - Hypotenuse calculation
-
-- Trigonometry calculation
+ 
+- Square and cube calculation
+ 
+- Four transactions (Addition,Subtraction,Multiplication,Division)
+ 
+- Square Root calculation
+ 
+- Factorial calculation
+ 
 
 ## Programming Language Used
 
