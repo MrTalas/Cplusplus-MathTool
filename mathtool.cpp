@@ -5,17 +5,18 @@
 #include <locale.h>
 #include <string.h>
 #include <windows.h>
+#include <time.h>
 int islemsec(){
 	char islem;
 	printf("\n[1]Yuzde hesabi");	
 	printf("\n[2]Hipotenus hesabi");
 	printf("\n[3]Kare/Kup hesabi");
-	printf("\n[4]4 Ä°slem");	
-	printf("\n[5]Karekok hesabi");		
-	printf("\n[6]Cikis");	
+	printf("\n[4]4 Ýslem");	
+	printf("\n[5]Karekok hesabi");	
+	printf("\n[6]Faktoriyel hesabi");			
+	printf("\n[7]Cikis");	
 	printf("\n:");
-	islem=getch();
-	printf("%c",islem);
+	islem=getche();
 	return islem;
 }
 
@@ -24,7 +25,7 @@ int homepage(){
 	printf("\nDevam Etmek icin [1]");
 	printf("\nAna sayfaya gitmek icin [2]");
 	printf("\n:");
-	hom = getch();
+	hom = getche();
 	return hom;
 	
 }
@@ -33,7 +34,7 @@ int kare_kup(){
 	printf("\n[1]Kare hesaplama");
 	printf("\n[2]Kup hesaplama");
 	printf("\n:");
-	sec = getch();
+	sec = getche();
 	if(sec == '1'){
 		int ilkkare;
 		int sonuckare;
@@ -94,7 +95,7 @@ int yuzde()
 	printf("\n[1]A sayisinin %%B'si kactir");
 	printf("\n[2]A sayisi, %B kadar artirilirsa kac olur?");
 	printf("\n:");
-	sec = getch();
+	sec = getche();
 	if(sec == '1'){
 		printf("\n[1]A sayisinin %%B'si kactir");
 		printf("\nA sayisi : ");
@@ -124,7 +125,7 @@ int dortislem()
 	printf("\n[3]Carpma");
 	printf("\n[4]Bolme");
 	printf("\n:");
-	sec = getch();
+	sec = getche();
 	if(sec == '1'){
 		printf("TOPLAMA ISLEMI");
 		printf("\nA sayisi : ");
@@ -158,6 +159,25 @@ int dortislem()
 		printf("%d / %d = %d",a,b,a/b);	
 	}	
 }
+
+int faktoriyel(){
+  int i = 0, faktoriyel = 1, sayi = 0;
+
+  fprintf(stdout, "\nSayi giriniz: ");
+  fscanf(stdin, "%d", &sayi);
+
+  for(i = 2; i <= sayi; i++){
+    faktoriyel *= i;
+  }
+
+  fprintf(stdout, "\n%d!=%d",sayi,faktoriyel);
+  
+
+  return 0;
+
+  
+}
+
 int main(){
 	printf("github.com/MrTalas");
 	system("color 3");
@@ -167,6 +187,7 @@ int main(){
 	bool homs=false;
 	if(islem == '1'){
 		yuzde:
+		fflush(stdin);
 		yuzde();
 		int hom=homepage();
 		if(hom == '1')goto yuzde;
@@ -174,6 +195,7 @@ int main(){
 	}
 	if(islem == '2'){
 		hipotenus:
+		fflush(stdin);
 		hipotenus();
 		int hom=homepage();
 		if(hom == '1')goto hipotenus;
@@ -182,6 +204,7 @@ int main(){
 	}
 	if(islem == '3'){
 		kare_kup:
+		fflush(stdin);
 		kare_kup();
 		int hom=homepage();
 		if(hom == '1')goto kare_kup;
@@ -189,6 +212,7 @@ int main(){
 	}
 	if(islem == '4'){
 		dort:
+		fflush(stdin);	
 		dortislem();
 		int hom=homepage();
 		if(hom == '1')goto dort;
@@ -197,13 +221,23 @@ int main(){
 	}
 	if(islem == '5'){
 		karekok:
+		fflush(stdin);	
 		karekok();
 		int hom=homepage();
 		if(hom == '1')goto karekok;
 		if(hom == '2')goto setup;
 			
-	}		
+	}	
 	if(islem == '6'){
+		faktoriyel:
+		fflush(stdin);	
+		faktoriyel();
+		int hom=homepage();
+		if(hom == '1')goto faktoriyel;
+		if(hom == '2')goto setup;
+			
+	}		
+	if(islem == '7'){
 		int fastex;
 		printf("\nExit !");
 		for(int i=5;i>0;i--){
@@ -216,6 +250,5 @@ int main(){
 		goto setup;
 	}
 	return 0;
-	
-	
+		
 }
