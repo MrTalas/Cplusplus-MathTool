@@ -226,8 +226,10 @@ int ebob_ekok(){
 }
 
 int main(){
+	HANDLE console;
+	console = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(console,3);
 	printf("github.com/MrTalas");
-	system("color 3");
 	setlocale(LC_ALL,"Turkish");
 	setup:
 	int islem=islemsec();
