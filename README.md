@@ -13,6 +13,8 @@ An advanced calculator with math tools inside.
 - Four transactions (Addition,Subtraction,Multiplication,Division)
  
 - Square Root calculation
+
+- Calculate the greatest and least common divisor
  
 - Factorial calculation
  
