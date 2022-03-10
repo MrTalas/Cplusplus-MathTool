@@ -11,10 +11,11 @@ int islemsec(){
 	printf("\n[1]Yuzde hesabi");	
 	printf("\n[2]Hipotenus hesabi");
 	printf("\n[3]Kare/Kup hesabi");
-	printf("\n[4]4 �slem");	
+	printf("\n[4]4 İslem");	
 	printf("\n[5]Karekok hesabi");	
-	printf("\n[6]Faktoriyel hesabi");			
-	printf("\n[7]Cikis");	
+	printf("\n[6]Faktoriyel hesabi");		
+	printf("\n[7]EBOB-EKOK hesabi");			
+	printf("\n[9]Cikis");	
 	printf("\n:");
 	islem=getche();
 	return islem;
@@ -22,7 +23,7 @@ int islemsec(){
 
 int homepage(){
 	int hom;
-	printf("\nDevam Etmek icin [1]");
+	printf("\n\nDevam Etmek icin [1]");
 	printf("\nAna sayfaya gitmek icin [2]");
 	printf("\n:");
 	hom = getche();
@@ -31,6 +32,7 @@ int homepage(){
 }
 int kare_kup(){
 	int sec;
+	printf("\n\tKARE-KUP HESAPLAMA");	
 	printf("\n[1]Kare hesaplama");
 	printf("\n[2]Kup hesaplama");
 	printf("\n:");
@@ -62,6 +64,7 @@ int kare_kup(){
 int karekok(){
 	int ilkkok;
 	int kok;
+	printf("\n\tKAREKOK HESAPLAMA");	
 	printf("\nKarekoku alinacak sayi :");
 	scanf("%d",&ilkkok);
 	kok = ilkkok;
@@ -73,6 +76,7 @@ int hipotenus()
 	int a;
 	int b;
 	int c;
+	printf("\n\tHIPOTENUS HESAPLAMA");
 	printf("\nA : ");
 	scanf("%d",&a);
 	printf("\nB : ");
@@ -92,6 +96,7 @@ int yuzde()
 	int sec;
 	float a=0;
 	float b=0;	
+	printf("\n\tYUZDE HESAPLAMA");	
 	printf("\n[1]A sayisinin %%B'si kactir");
 	printf("\n[2]A sayisi, %B kadar artirilirsa kac olur?");
 	printf("\n:");
@@ -162,7 +167,7 @@ int dortislem()
 
 int faktoriyel(){
   int i = 0, faktoriyel = 1, sayi = 0;
-
+  printf("\n\tFAKTORİYEL HESAPLAMA");
   fprintf(stdout, "\nSayi giriniz: ");
   fscanf(stdin, "%d", &sayi);
 
@@ -176,6 +181,48 @@ int faktoriyel(){
   return 0;
 
   
+}
+
+
+int ebob_ekok(){
+	int sayi1,sayi2;
+	int buyuksayi,kucuksayi;
+	int sayac;
+	int EKOK,EBOB;
+	printf("\n\tEBOB-EKOK HESAPLAMA");
+	printf("\n1.sayi :");
+	scanf("%d",&sayi1);
+	printf("\n2.sayi :");
+	scanf("%d",&sayi2);	
+	if(sayi1>sayi2){
+		buyuksayi=sayi1;
+		kucuksayi=sayi2;
+	}
+	else{
+		buyuksayi=sayi2;
+		kucuksayi=sayi1;
+	}
+	sayac=buyuksayi;
+	
+	while(1){
+		if(sayac%buyuksayi==0 && sayac%kucuksayi==0){
+			EKOK=sayac;
+			break;
+		}
+		sayac++;
+	}
+	
+	sayac=kucuksayi;
+	while(1){
+		if(buyuksayi%sayac==0 && kucuksayi%sayac==0){
+			EBOB=sayac;
+			break;
+		}
+		sayac--;
+	}
+	
+	printf("%d ve %d sayisinin ;\n",sayi1,sayi2);
+	printf("EKOKU : %d \nEBOBU : %d",EKOK,EBOB);	
 }
 
 int main(){
@@ -236,8 +283,17 @@ int main(){
 		if(hom == '1')goto faktoriyel;
 		if(hom == '2')goto setup;
 			
-	}		
+	}
 	if(islem == '7'){
+		eb_ek:
+		fflush(stdin);	
+		ebob_ekok();
+		int hom=homepage();
+		if(hom == '1')goto eb_ek;
+		if(hom == '2')goto setup;
+			
+	}			
+	if(islem == '9'){
 		int fastex;
 		printf("\nExit !");
 		for(int i=5;i>0;i--){
