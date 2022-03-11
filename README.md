@@ -15,6 +15,8 @@ An advanced calculator with math tools inside.
 - Square Root calculation
 
 - Calculate the greatest and least common divisor
+
+- Area calculation
  
 - Factorial calculation
  
