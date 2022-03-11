@@ -14,7 +14,8 @@ int islemsec(){
 	printf("\n[4]4 İslem");	
 	printf("\n[5]Karekok hesabi");	
 	printf("\n[6]Faktoriyel hesabi");		
-	printf("\n[7]EBOB-EKOK hesabi");			
+	printf("\n[7]EBOB-EKOK hesabi");
+	printf("\n[8]Alan hesabi");				
 	printf("\n[9]Cikis");	
 	printf("\n:");
 	islem=getche();
@@ -27,6 +28,7 @@ int homepage(){
 	printf("\nAna sayfaya gitmek icin [2]");
 	printf("\n:");
 	hom = getche();
+	system("cls");
 	return hom;
 	
 }
@@ -225,6 +227,81 @@ int ebob_ekok(){
 	printf("EKOKU : %d \nEBOBU : %d",EKOK,EBOB);	
 }
 
+int alan(){
+	int sec=0;
+	int kenar1=0;
+	int kenar2=0;
+	printf("\n\tALAN HESAPLAMA");
+	printf("\n[1]Kare alan hesaplama");
+	printf("\n[2]Dikdortgen alan hesaplama");
+	printf("\n[3]Ucgen alan hesaplama");
+	printf("\n:");
+	scanf("%d",&sec);
+	if(sec==1){
+			printf("\n\tKARE ALAN HESAPLAMA");
+			printf("\n\nKarenin bir kenarini giriniz :");
+			scanf("%d",&kenar1);
+			kenar1 = pow(kenar1,2);
+			printf("\nKarenin alani : %d",kenar1);					
+	}
+	
+	if(sec==2){
+			printf("\n\tDIKDORTGEN ALAN HESAPLAMA");
+			printf("\n\nDikdortgenin uzun kenarini giriniz :");
+			scanf("%d",&kenar1);
+			printf("Dikdortgenin kisa kenarini giriniz :");	
+			scanf("%d",&kenar2);
+			kenar1=kenar1*kenar2;
+			printf("\nDikdortgenin alani : %d",kenar1);		
+	}	
+
+	if(sec==3){
+			printf("\n\tUCGEN ALAN HESAPLAMA");
+			printf("\nTaban :");
+			scanf("%d",&kenar1);
+			printf("Yukselik :");	
+			scanf("%d",&kenar2);
+			kenar1=(kenar1*kenar2)/2;
+			printf("\nUcgenin alani : %d",kenar1);		
+	}		
+
+	
+	
+	return 0;
+	
+	/*switch(sec){
+		case 1:
+			printf("\nKARE ALAN HESAPLAMA");
+			printf("\n\nKarenin bir kenarini giriniz :");
+			scanf("%d",&kenar1);
+			kenar1 = pow(kenar1,2);
+			printf("%d",kenar1);
+			printf("Karenin alani : %d",kenar1);
+			break;
+		case 2:
+			printf("\nDIKDORTGEN ALAN HESAPLAMA");
+			printf("\n\Dikdortgenin uzun kenarini giriniz :");
+			scanf("%d",&kenar1);
+			printf("\n\Dikdortgenin kisa kenarini giriniz :");	
+			scanf("%d",&kenar2);
+			kenar1=kenar1*kenar2;
+			printf("Dikdortgenin alani : %d",kenar1);
+			break;	
+		case 3:
+			printf("\nUCGEN ALAN HESAPLAMA");
+			printf("\n\Taban :");
+			scanf("%d",&kenar1);
+			printf("\n\Yukselik :");	
+			scanf("%d",&kenar2);
+			kenar1=(kenar1*kenar2)/2;
+			printf("Ucgenin alani : %d",kenar1);
+			break;
+		default:
+			printf("Gecersiz islem");	
+			break;						
+	}*/
+}
+
 int main(){
 	HANDLE console;
 	console = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -237,6 +314,7 @@ int main(){
 	if(islem == '1'){
 		yuzde:
 		fflush(stdin);
+		system("cls");
 		yuzde();
 		int hom=homepage();
 		if(hom == '1')goto yuzde;
@@ -245,6 +323,7 @@ int main(){
 	if(islem == '2'){
 		hipotenus:
 		fflush(stdin);
+		system("cls");
 		hipotenus();
 		int hom=homepage();
 		if(hom == '1')goto hipotenus;
@@ -254,6 +333,7 @@ int main(){
 	if(islem == '3'){
 		kare_kup:
 		fflush(stdin);
+		system("cls");
 		kare_kup();
 		int hom=homepage();
 		if(hom == '1')goto kare_kup;
@@ -262,6 +342,7 @@ int main(){
 	if(islem == '4'){
 		dort:
 		fflush(stdin);	
+		system("cls");
 		dortislem();
 		int hom=homepage();
 		if(hom == '1')goto dort;
@@ -271,6 +352,7 @@ int main(){
 	if(islem == '5'){
 		karekok:
 		fflush(stdin);	
+		system("cls");
 		karekok();
 		int hom=homepage();
 		if(hom == '1')goto karekok;
@@ -280,6 +362,7 @@ int main(){
 	if(islem == '6'){
 		faktoriyel:
 		fflush(stdin);	
+		system("cls");
 		faktoriyel();
 		int hom=homepage();
 		if(hom == '1')goto faktoriyel;
@@ -289,12 +372,23 @@ int main(){
 	if(islem == '7'){
 		eb_ek:
 		fflush(stdin);	
+		system("cls");
 		ebob_ekok();
 		int hom=homepage();
 		if(hom == '1')goto eb_ek;
 		if(hom == '2')goto setup;
 			
-	}			
+	}
+	if(islem == '8'){
+		alann:
+		fflush(stdin);	
+		system("cls");
+		alan();
+		int hom=homepage();
+		if(hom == '1')goto alann;
+		if(hom == '2')goto setup;
+			
+	}				
 	if(islem == '9'){
 		int fastex;
 		printf("\nExit !");
