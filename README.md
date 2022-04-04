@@ -19,6 +19,8 @@ An advanced calculator with math tools inside.
 - Area calculation
  
 - Factorial calculation
+
+- Trigonometric Function Calculation
  
 
 ## Programming Language Used
